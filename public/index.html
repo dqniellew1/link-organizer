@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Links</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>My Library</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search links...">
+        </div>
+        <div class="filters" style="margin-bottom: 20px; display: flex; gap: 10px;">
+            <button class="filter-btn active" data-status="all">All</button>
+            <button class="filter-btn" data-status="unread">Unread</button>
+            <button class="filter-btn" data-status="read">Read</button>
+        </div>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="linkList" class="link-list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
