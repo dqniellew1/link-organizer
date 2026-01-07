@@ -25,7 +25,9 @@ app.use('/api', webRoutes);
 async function start() {
     try {
         // Database Sync
-        await sequelize.sync({ alter: true });
+        // Use alter in development, but not in production to preserve data
+        const syncOptions = process.env.DATABASE_URL ? {} : { alter: true };
+        await sequelize.sync(syncOptions);
         console.log('✅ Database synced');
 
         // Start Bot
